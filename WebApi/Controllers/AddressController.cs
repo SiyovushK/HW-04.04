@@ -15,26 +15,31 @@ public class AddressController : ControllerBase
         _addressService = addressService;
     }
 
+    [HttpGet]
     public async Task<Response<List<Address>>> GetAllAsync()
     {
         return await _addressService.GetAllAsync();
     }
 
+    [HttpGet("id")]
     public async Task<Response<Address>> GetByIdAsync(int ID)
     {
         return await _addressService.GetByIdAsync(ID);
     }
 
+    [HttpPost]
     public async Task<Response<Address>> CreateAsync(Address Address)
     {
         return await _addressService.CreateAsync(Address);
     }
 
+    [HttpPut]
     public async Task<Response<Address>> UpdateAsync(Address Address)
     {
         return await _addressService.UpdateAsync(Address);
     }
 
+    [HttpDelete]
     public async Task<Response<string>> DeleteAsync(int ID)
     {
         return await _addressService.DeleteAsync(ID);

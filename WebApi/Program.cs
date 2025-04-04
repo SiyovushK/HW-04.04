@@ -12,6 +12,9 @@ builder.Services.AddScoped<DataContext>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<IAddressService, AddressService>();
+builder.Services.AddScoped<ICourseService, CourseService>();
+builder.Services.AddScoped<IGroupService, GroupService>();
+builder.Services.AddScoped<IStudentGroup, StudentGroupService>();
 builder.Services.AddDbContext<DataContext>(t =>
     t.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
